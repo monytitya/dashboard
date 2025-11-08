@@ -1,6 +1,5 @@
 const multer = require('multer');
 
-// Multer storage configuration
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/images'); 
@@ -10,7 +9,6 @@ const storage = multer.diskStorage({
     }
 });
 
-// File upload middleware
 const upload = multer({ storage: storage });
 
 module.exports = upload;

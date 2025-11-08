@@ -1,8 +1,7 @@
-
 const mongoose = require('mongoose');
 const Admin = require('../model/admins'); 
 // MongoDB connection URI
-const url = 'mongodb+srv://tityamonymao_db_user:adminpanel@cluster0.dlsaobg.mongodb.net/?appName=Cluster0';
+const uri = 'mongodb+srv://tityamonymao_db_user:adminpanel@cluster0.dlsaobg.mongodb.net/?appName=Cluster0';
 // Connect to MongoDB using Mongoose
 async function connectToDatabase() {
   try {

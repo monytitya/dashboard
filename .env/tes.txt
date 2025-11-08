@@ -1,0 +1,9 @@
+----- Login ----
+Email: admintest@gmail.com
+Password: Admin123
+
+
+----- Register ----
+Name: Admin Test
+Email: admintest@gmail.com
+Password: Admin123

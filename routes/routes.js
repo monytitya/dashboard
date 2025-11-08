@@ -3,11 +3,9 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Admin = require('../model/admins'); 
-//const authenticateToken = require('../middleware/auth');
 const authenticateToken = require('../middleware/auth'); 
 const upload = require('../middleware/upload'); 
 
-// Display login form
 router.get('/', (req, res) => {
     res.render('home'); 
 });
@@ -44,18 +42,13 @@ router.post('/register', async (req, res) => {
     }
   });
   
-
 router.get('/register', (req, res) => {
     res.render('register'); 
 });
 
-
-// Display login form
 router.get('/login', (req, res) => {
     res.render('login');
 });
-
-
 
 router.get('/table', (req, res) => {
     res.render('table');
@@ -110,7 +103,7 @@ router.get('/profile', authenticateToken, async (req, res) => {
 router.post('/profile', authenticateToken, upload.single('picture'), async (req, res) => {
     try {
         const { name, bio } = req.body;
-        const picture = req.file ? '/images/' + req.file.filename : null; // Construct path to store in database
+        const picture = req.file ? '/images/' + req.file.filename : null;
 
         const updatedFields = { name, bio };
         if (picture) {
